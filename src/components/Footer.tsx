@@ -34,8 +34,11 @@ const Footer: React.FC = () => {
           <div className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Syed Nayyar Mansoor. Designed for Excellence.
           </div>
-          <div className="text-xs text-zinc-600">
-            Based in Melbourne, Australia
+          <div className="flex items-center gap-4">
+            <img src="https://visitor-badge.laobi.icu/badge?page_id=nayyarsyed.portfolio&left_color=gray&right_color=black" alt="Visitor Badge" />
+            <div className="text-xs text-zinc-600">
+              Based in Melbourne, Australia
+            </div>
           </div>
         </div>
       </div>
