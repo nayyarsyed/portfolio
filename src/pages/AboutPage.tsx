@@ -60,6 +60,12 @@ const AboutPage: React.FC = () => {
             >
               View Projects
             </div>
+            <div 
+              onClick={() => navigate('/journey')}
+              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold rounded-full hover:bg-zinc-800 transition-colors cursor-pointer"
+            >
+              Journey
+            </div>
             <a 
               href={about.linkedin}
               target="_blank"
