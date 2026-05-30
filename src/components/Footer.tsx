@@ -26,7 +26,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-20 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-16 bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 md:p-6 text-center text-zinc-400 text-sm">
+          ✨ This portfolio was created entirely using the <span className="text-zinc-100 font-semibold">Gemini CLI</span> and <span className="text-zinc-100 font-semibold">Dev Agent</span> just through prompting!
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Syed Nayyar Mansoor. Designed for Excellence.
           </div>

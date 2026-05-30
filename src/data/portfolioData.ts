@@ -28,7 +28,7 @@ export const portfolioData = {
     name: "Syed Nayyar Mansoor",
     title: "Enterprise Data Architect | Data Strategy Leader",
     location: "Melbourne, VIC",
-    summary: "Transformational Data Leader and Enterprise Architect with 20 years of experience designing and executing mission-critical data ecosystems across Healthcare, Banking, Infrastructure, and Government sectors globally (UAE, NZ, Australia, USA). Expert in bridging the gap between C-suite strategic vision and enterprise technical execution.",
+    summary: "Transformational Data Leader and Enterprise Architect with 11 years of experience designing and executing mission-critical data ecosystems across Healthcare, Banking, Infrastructure, and Government sectors globally (UAE, NZ, Australia, USA). Expert in bridging the gap between C-suite strategic vision and enterprise technical execution.",
     email: "",
     phone: "",
     linkedin: "https://www.linkedin.com/in/syednayyar/",
@@ -43,7 +43,7 @@ export const portfolioData = {
     {
       year: "2026",
       title: "Enterprise Data Architect",
-      company: "GHD (Project Aurora)",
+      company: "GHD (Fabric Engineering Project)",
       location: "Melbourne",
       countryFlag: "🇦🇺",
       details: ["Leading enterprise data architecture", "Transitioning legacy warehousing to Lakehouse", "Medallion Architecture Design"]
@@ -106,8 +106,8 @@ export const portfolioData = {
       tools: ["Power BI", "Live Sensors", "Digital Twin", "2D Animation", "Real-Time Analytics"]
     },
     {
-      id: "project-aurora",
-      title: "Project Aurora: Scalable Lakehouse Ecosystem",
+      id: "fabric-engineering-project",
+      title: "Fabric Engineering Project: Scalable Lakehouse Ecosystem",
       role: "Enterprise Data Architect",
       company: "GHD",
       description: "Architected foundational data layers (Bronze, Silver, Gold) and optimized pipelines to accelerate data ingestion and processing velocity.",
