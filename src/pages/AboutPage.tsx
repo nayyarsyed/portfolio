@@ -35,34 +35,34 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-20">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] text-zinc-900 dark:text-white pt-20 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 lg:px-20 border-b border-zinc-900 overflow-hidden">
+      <section className="relative py-20 px-6 lg:px-20 border-b border-zinc-200 dark:border-zinc-900 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-start space-y-8 relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-medium uppercase tracking-widest">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-700 dark:text-zinc-400 text-xs font-medium uppercase tracking-widest">
             <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
             {about.title}
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] max-w-5xl">
-            Bridging <span className="text-zinc-500 italic">Strategy</span> <br />
-            with <span className="text-zinc-100">Execution.</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] max-w-5xl text-zinc-900 dark:text-white">
+            Bridging <span className="text-zinc-400 dark:text-zinc-500 italic">Strategy</span> <br />
+            with <span className="text-zinc-900 dark:text-zinc-100">Execution.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed font-light">
             {about.summary}
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
             <div 
               onClick={() => navigate('/projects')}
-              className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform cursor-pointer"
+              className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:scale-105 transition-transform cursor-pointer shadow-sm"
             >
               View Projects
             </div>
             <div 
               onClick={() => navigate('/journey')}
-              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold rounded-full hover:bg-zinc-800 transition-colors cursor-pointer"
+              className="px-8 py-4 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-white font-bold rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer shadow-xs"
             >
               Journey
             </div>
@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
               href={about.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold rounded-full hover:bg-zinc-800 transition-colors cursor-pointer"
+              className="px-8 py-4 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-white font-bold rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer shadow-xs"
             >
               Get in Touch
             </a>
@@ -86,20 +86,20 @@ const AboutPage: React.FC = () => {
       <section className="py-24 px-6 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-500 mb-4">Core Expertise</h2>
-            <div className="h-px w-20 bg-zinc-800"></div>
+            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-400 dark:text-zinc-500 mb-4">Core Expertise</h2>
+            <div className="h-px w-20 bg-zinc-300 dark:bg-zinc-800"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skillCategories.map((category, idx) => (
               <div 
                 key={idx} 
-                className="group p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-900/60 transition-all duration-500 cursor-default"
+                className="group p-8 rounded-3xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/60 shadow-xs hover:shadow-md transition-all duration-500 cursor-default"
                 style={{ '--hover-color': category.color } as React.CSSProperties}
               >
                 <div 
-                  className="mb-8 p-4 w-fit rounded-2xl bg-zinc-900 border border-zinc-800 transition-all duration-500 group-hover:scale-110"
-                  style={{ color: '#71717a' }} // Default zinc-500
+                  className="mb-8 p-4 w-fit rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-500 group-hover:scale-110"
+                  style={{ color: '#71717a' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = category.color}
                   onMouseLeave={(e) => e.currentTarget.style.color = '#71717a'}
                 >
@@ -108,10 +108,10 @@ const AboutPage: React.FC = () => {
                     style: { color: 'inherit' }
                   })}
                 </div>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-white transition-colors">{category.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-zinc-900 dark:text-white transition-colors">{category.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, sIdx) => (
-                    <span key={sIdx} className="text-xs text-zinc-500 font-medium group-hover:text-zinc-400 transition-colors">
+                    <span key={sIdx} className="text-xs text-zinc-500 dark:text-zinc-400 font-medium transition-colors">
                       {skill} {sIdx < category.skills.length - 1 && "•"}
                     </span>
                   ))}
@@ -128,11 +128,11 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Experience & Awards */}
-      <section className="py-24 px-6 lg:px-20 bg-zinc-950/50 border-t border-zinc-900">
+      <section className="py-24 px-6 lg:px-20 bg-zinc-100/60 dark:bg-zinc-950/50 border-t border-zinc-200 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Education */}
           <div className="space-y-12">
-            <h2 className="text-2xl font-bold flex items-center">
+            <h2 className="text-2xl font-bold flex items-center text-zinc-900 dark:text-white">
               <GraduationCap className="mr-4 text-zinc-400" /> Academic Foundation
             </h2>
             <div className="space-y-6">
@@ -141,10 +141,10 @@ const AboutPage: React.FC = () => {
                 { title: "Master’s in Computer Science", sub: "Post-Graduate Degree", color: "#7EE6CE" },
                 { title: "Bachelor of Commerce", sub: "Undergraduate Degree", color: "#F5D17E" }
               ].map((item, i) => (
-                <div key={i} className="group flex items-start gap-6 p-6 rounded-2xl hover:bg-zinc-900/50 transition-all duration-300">
-                  <div className="w-1 h-12 rounded-full bg-zinc-800 group-hover:scale-y-110 transition-transform" style={{ backgroundColor: item.color }}></div>
+                <div key={i} className="group flex items-start gap-6 p-6 rounded-2xl hover:bg-white/80 dark:hover:bg-zinc-900/50 transition-all duration-300">
+                  <div className="w-1 h-12 rounded-full bg-zinc-300 dark:bg-zinc-800 group-hover:scale-y-110 transition-transform" style={{ backgroundColor: item.color }}></div>
                   <div>
-                    <h4 className="font-bold text-lg group-hover:text-white transition-colors">{item.title}</h4>
+                    <h4 className="font-bold text-lg text-zinc-900 dark:text-white transition-colors">{item.title}</h4>
                     <p className="text-zinc-500 italic text-sm">{item.sub}</p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const AboutPage: React.FC = () => {
 
           {/* Awards */}
           <div className="space-y-12">
-            <h2 className="text-2xl font-bold flex items-center">
+            <h2 className="text-2xl font-bold flex items-center text-zinc-900 dark:text-white">
               <Award className="mr-4 text-zinc-400" /> Industry Recognition
             </h2>
             <div className="grid gap-6">
@@ -162,11 +162,11 @@ const AboutPage: React.FC = () => {
                 { title: "Winner – LXRP Power BI Challenge", desc: "2024 Recognition for data visualization excellence.", tag: "Data Excellence", color: "#50B6FC" },
                 { title: "“Out-of-the-Box Thinking Award”", desc: "For cross-functional dashboard delivery and innovative problem solving.", tag: "Innovation", color: "#F5D17E" }
               ].map((award, i) => (
-                <div key={i} className="group p-8 rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 relative overflow-hidden">
+                <div key={i} className="group p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-xs hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity -mr-8 -mt-8 rounded-full" style={{ backgroundColor: award.color }}></div>
-                  <h4 className="text-xl font-bold mb-2 group-hover:text-white">{award.title}</h4>
-                  <p className="text-zinc-400 mb-6 text-sm">{award.desc}</p>
-                  <div className="inline-block px-3 py-1 rounded-full text-[10px] font-bold text-zinc-300 bg-zinc-800 group-hover:bg-zinc-700 transition-colors">
+                  <h4 className="text-xl font-bold mb-2 text-zinc-900 dark:text-white">{award.title}</h4>
+                  <p className="text-zinc-600 dark:text-zinc-400 mb-6 text-sm">{award.desc}</p>
+                  <div className="inline-block px-3 py-1 rounded-full text-[10px] font-bold text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 group-hover:bg-zinc-200 dark:group-hover:bg-zinc-700 transition-colors">
                     {award.tag}
                   </div>
                 </div>

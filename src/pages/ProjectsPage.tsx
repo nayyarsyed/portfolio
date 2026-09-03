@@ -24,17 +24,17 @@ const ProjectsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-32 pb-24 px-6 lg:px-20 overflow-hidden relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] text-zinc-900 dark:text-white pt-32 pb-24 px-6 lg:px-20 overflow-hidden relative transition-colors duration-300">
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#B5A9E5]/5 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-24 space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Case <span className="text-zinc-600">Studies</span></h1>
-          <p className="text-zinc-400 text-xl max-w-2xl font-light leading-relaxed">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white">Case <span className="text-zinc-400 dark:text-zinc-600">Studies</span></h1>
+          <p className="text-zinc-600 dark:text-zinc-400 text-xl max-w-2xl font-light leading-relaxed">
             Data ecosystems engineered for high-value impact and operational efficiency.
           </p>
-          <div className="h-px w-full bg-zinc-900 mt-12"></div>
+          <div className="h-px w-full bg-zinc-200 dark:bg-zinc-900 mt-12"></div>
         </div>
 
         <div className="space-y-32">
@@ -49,38 +49,38 @@ const ProjectsPage: React.FC = () => {
                   {/* Left Side: Content */}
                   <div className="space-y-8">
                     <div className="flex items-center gap-4">
-                      <span className="text-xs font-bold tracking-[0.2em] text-zinc-500 uppercase">0{idx + 1}</span>
+                      <span className="text-xs font-bold tracking-[0.2em] text-zinc-400 dark:text-zinc-500 uppercase">0{idx + 1}</span>
                       <div className="h-px w-12 transition-all duration-500 group-hover:w-20" style={{ backgroundColor: itemColor }}></div>
-                      <span className="text-xs font-bold tracking-[0.2em] text-zinc-500 uppercase">{project.company}</span>
+                      <span className="text-xs font-bold tracking-[0.2em] text-zinc-400 dark:text-zinc-500 uppercase">{project.company}</span>
                     </div>
 
                     <h2 
-                      className="text-4xl md:text-6xl font-bold tracking-tight transition-colors duration-500"
+                      className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white transition-colors duration-500"
                       onMouseEnter={(e) => e.currentTarget.style.color = itemColor}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = ''}
                     >
                       {project.title}
                     </h2>
 
                     {/* Project Image/GIF if available */}
                     {projectImage && (
-                      <div className="relative rounded-[2.5rem] overflow-hidden border border-zinc-800 group-hover:border-zinc-700 transition-all duration-500 aspect-video">
+                      <div className="relative rounded-[2.5rem] overflow-hidden border border-zinc-200 dark:border-zinc-800 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 shadow-sm transition-all duration-500 aspect-video">
                         <img 
                           src={projectImage} 
                           alt={project.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#0a0a0a]/80 to-transparent"></div>
                       </div>
                     )}
 
-                    <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl font-light">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xl leading-relaxed max-w-2xl font-light">
                       {project.description}
                     </p>
 
                     <div className="flex flex-wrap gap-3">
                       {project.tools.map((tool) => (
-                        <span key={tool} className="flex items-center gap-2 px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-full text-xs font-medium text-zinc-400 transition-all duration-300 group-hover:border-zinc-700">
+                        <span key={tool} className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-full text-xs font-medium text-zinc-700 dark:text-zinc-400 shadow-2xs transition-all duration-300 group-hover:border-zinc-300 dark:group-hover:border-zinc-700">
                           {React.cloneElement(getToolIcon(tool) as React.ReactElement<{ style?: React.CSSProperties }>, { style: { color: itemColor } })}
                           {tool}
                         </span>
@@ -90,35 +90,40 @@ const ProjectsPage: React.FC = () => {
 
                   {/* Right Side: Metrics Dashboard Style */}
                   <div className="space-y-4">
-                    <div className="p-10 rounded-[2.5rem] bg-zinc-900/30 border border-zinc-800/50 backdrop-blur-sm space-y-10 group-hover:bg-zinc-900/50 transition-all duration-500 group-hover:border-zinc-700">
+                    <div className="p-10 rounded-[2.5rem] bg-white dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/50 backdrop-blur-sm space-y-10 shadow-xs hover:shadow-md dark:shadow-none dark:hover:bg-zinc-900/50 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700">
                       <div className="flex justify-between items-center">
-                        <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-[0.2em]">Efficiency Metrics</span>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em]">Efficiency Metrics</span>
                         <ArrowUpRight size={18} style={{ color: itemColor }} className="group-hover:scale-125 transition-transform duration-500" />
                       </div>
                       
                       <div className="grid gap-8">
                         {project.metrics.map((metric, i) => (
-                          <div key={i} className="space-y-2 group/metric">
-                            <div className="text-4xl font-bold tracking-tighter text-white transition-all duration-300 group-hover/metric:translate-x-1">{metric.value}</div>
-                            <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{metric.label}</div>
+                          <div key={i} className="space-y-1 border-b border-zinc-100 dark:border-zinc-800/50 pb-6 last:border-0 last:pb-0">
+                            <div className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:scale-105 transition-transform origin-left">
+                              {metric.value}
+                            </div>
+                            <div className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                              {metric.label}
+                            </div>
                             {metric.subtext && (
-                              <div className="text-[10px] text-zinc-600 italic">{metric.subtext}</div>
+                              <div className="text-xs text-zinc-400 dark:text-zinc-500">
+                                {metric.subtext}
+                              </div>
                             )}
                           </div>
                         ))}
                       </div>
-                    </div>
-                    
-                    <div className="px-8 flex items-center justify-between text-[10px] font-bold text-zinc-700 uppercase tracking-[0.2em]">
-                      <span className="group-hover:text-zinc-500 transition-colors">{project.industry} Sector</span>
-                      <span className="group-hover:text-zinc-500 transition-colors">Verified Success</span>
+
+                      <div className="pt-4 flex items-center justify-between border-t border-zinc-100 dark:border-zinc-800/80 text-[10px] font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">
+                        <span>Industry</span>
+                        <span className="px-3 py-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-zinc-700 dark:text-zinc-400">
+                          {project.industry}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
                 </div>
-                
-                {/* Divider for next project */}
-                <div className="absolute -bottom-16 left-0 w-full h-px bg-zinc-900/50"></div>
               </div>
             );
           })}
